@@ -1,13 +1,32 @@
 let slideIndex = 1;
+createDotElement();
 showSlides(slideIndex);
 
-const plusSlides = (n) => showSlides((slideIndex += n));
+let buttonNext = document
+  .getElementById("next")
+  .addEventListener("click", () => {
+    let n = 1;
+    showSlides((slideIndex += n));
+  });
 
-const currentSlide =(n)=> showSlides((slideIndex = n));
-
+let buttonPrev = document
+  .getElementById("prev")
+  .addEventListener("click", () => {
+    let n = -1;
+    showSlides((slideIndex += n));
+  });
+  function createDotElement() {
+    let n =document.getElementsByClassName("mySlides");
+    for (a = 0; a < n.length; a++) {
+      let elemento = document.createElement("SPAN");
+      let att = document.createAttribute("class");
+      att.value = "dot";
+      elemento.setAttributeNode(att);
+      document.getElementById("dotCount").appendChild(elemento);
+    }
+  }
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
+  let slides =document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
   if (n > slides.length) {
     slideIndex = 1;
@@ -18,9 +37,11 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  for (j = 0; j < dots.length; j++) {
+    dots[j].className = dots[j].className.replace(" active", "");
   }
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
+
+
