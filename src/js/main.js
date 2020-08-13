@@ -1,47 +1,16 @@
-let slideIndex = 1;
-createDotElement();
-showSlides(slideIndex);
+let backet = document.getElementById("cesta");
 
-let buttonNext = document
-  .getElementById("next")
-  .addEventListener("click", () => {
-    let n = 1;
-    showSlides((slideIndex += n));
-  });
+let producto= document.getElementsByTagName('article');
 
-let buttonPrev = document
-  .getElementById("prev")
-  .addEventListener("click", () => {
-    let n = -1;
-    showSlides((slideIndex += n));
-  });
-  function createDotElement() {
-    let n =document.getElementsByClassName("mySlides");
-    for (a = 0; a < n.length; a++) {
-      let elemento = document.createElement("SPAN");
-      let att = document.createAttribute("class");
-      att.value = "dot";
-      elemento.setAttributeNode(att);
-      document.getElementById("dotCount").appendChild(elemento);
-    }
+for (let a=0; a<producto.length; a++){
+
+  if (producto[a].id!=='cesta'){
+    let attr=document.createAttribute ('draggable');
+    attr.value='true';
+    document.getElementById(producto[a].id).setAttributeNode(attr);
+    document.getElementById(producto[a].id).addEventListener('click',
+    ()=>{
+      console.log (producto[a].id);
+    });
   }
-function showSlides(n) {
-  let slides =document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (j = 0; j < dots.length; j++) {
-    dots[j].className = dots[j].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
 }
-
-
