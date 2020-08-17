@@ -33,11 +33,12 @@ header {
   grid-column: 1/7;
   text-align: center;
 }
-* img {
+
+.itemsImg {
   width: 8rem;
 }
 
-* img:hover {
+.itemsImg:hover {
   width: 10rem;
 }
 
