@@ -1,16 +1,38 @@
-let backet = document.getElementById("cesta");
 
-let producto= document.getElementsByTagName('article');
+let total = 0;
 
-for (let a=0; a<producto.length; a++){
+const backet = document.getElementById("cesta");
+const producto = document.getElementsByClassName('stock');
 
-  if (producto[a].id!=='cesta'){
-    let attr=document.createAttribute ('draggable');
-    attr.value='true';
-    document.getElementById(producto[a].id).setAttributeNode(attr);
-    document.getElementById(producto[a].id).addEventListener('click',
-    ()=>{
-      console.log (producto[a].id);
-    });
-  }
-}
+for (let items of producto) {
+  let imagenes = items.getElementsByTagName('img');
+
+  for (let img of imagenes) {
+    document.getElementById(img.id).setAttribute('draggable', 'true');
+
+    document.getElementById(img.id).addEventListener('dragstart', (e) => {
+       
+      
+      let price = items.querySelector("p.price").textContent;
+  
+      total = Number(price.replace("€", "")) + total;
+  
+      document.getElementById("total").innerText = (total);
+  
+      let imagen = items.querySelector('img');
+  
+  
+    })
+
+  };
+
+ 
+
+  
+
+
+
+};
+
+
+

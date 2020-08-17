@@ -3,8 +3,8 @@
   height: 500px;
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: repeat(4, 250px);
-  grid-template-rows: repeat(6, 200px);
+  grid-template-columns: repeat(6, 250px);
+  grid-template-rows: repeat(4, 200px);
   justify-content: center;
   align-items: center;
 }
@@ -13,26 +13,24 @@
   font-size: 20px;
   font-weight: bold;
   font-family: "Times New Roman", Times, serif;
-  padding: 8px 12px;
-  bottom: 8px;
   width: 100%;
   text-align: center;
+  margin: inherit;
 }
 .price {
   color: #319b48;
   font-size: 20px;
   font-weight: bold;
   font-family: "Times New Roman", Times, serif;
-  padding: 8px 12px;
-  bottom: 8px;
   width: 100%;
   text-align: center;
   margin-bottom: 5px;
+  margin: inherit;
 }
 
 header {
   grid-row: 1;
-  grid-column: 1/5;
+  grid-column: 1/7;
   text-align: center;
 }
 * img {
@@ -67,49 +65,41 @@ article {
 }
 
 #cinco {
-  grid-row: 3;
-  grid-column: 1/2;
+  grid-row: 2;
+  grid-column: 5/6;
 }
 #seis {
-  grid-row: 3;
-  grid-column: 2/3;
+  grid-row: 2;
+  grid-column: 6/6;
 }
 #siete {
   grid-row: 3;
-  grid-column: 3/4;
+  grid-column: 1/2;
 }
 #ocho {
   grid-row: 3;
-  grid-column: 4/4;
+  grid-column: 2/3;
 }
 
 #nueve {
-  grid-row: 4;
-  grid-column: 1/2;
-}
-#diez {
-  grid-row: 4;
-  grid-column: 2/3;
-}
-#once {
-  grid-row: 4;
+  grid-row: 3;
   grid-column: 3/4;
 }
+#diez {
+  grid-row: 3;
+  grid-column: 4/5;
+}
+#once {
+  grid-row: 3;
+  grid-column: 5/6;
+}
 #doce {
-  grid-row: 4;
-  grid-column: 4/4;
+  grid-row: 3;
+  grid-column: 6/6;
 }
 
 #cesta {
-  grid-row: 5;
-  grid-column: 1/5;
-  text-align: center;
+  grid-row: 4;
+  grid-column: 6/6;
+  
 }
-
-footer {
-  grid-row: 6;
-  grid-column: 4/5;
-  text-align: center;
- 
-}
-
