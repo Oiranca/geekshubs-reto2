@@ -1,47 +1,48 @@
-let slideIndex = 1;
-createDotElement();
-showSlides(slideIndex);
 
-let buttonNext = document
-  .getElementById("next")
-  .addEventListener("click", () => {
-    let n = 1;
-    showSlides((slideIndex += n));
-  });
+let priceElement = 0;
+let count = 0;
+let total = 0;
+let imagen = new Map();
 
-let buttonPrev = document
-  .getElementById("prev")
-  .addEventListener("click", () => {
-    let n = -1;
-    showSlides((slideIndex += n));
-  });
-  function createDotElement() {
-    let n =document.getElementsByClassName("mySlides");
-    for (a = 0; a < n.length; a++) {
-      let elemento = document.createElement("SPAN");
-      let att = document.createAttribute("class");
-      att.value = "dot";
-      elemento.setAttributeNode(att);
-      document.getElementById("dotCount").appendChild(elemento);
-    }
-  }
-function showSlides(n) {
-  let slides =document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (j = 0; j < dots.length; j++) {
-    dots[j].className = dots[j].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
+const backet = document.getElementById("cesta");
+let imagenes = document.getElementsByTagName('img');
+
+for (let img of imagenes) {
+
+  if (img.id != 'backetShop') {
+
+    document.getElementById(img.id).setAttribute('draggable', 'true')
+
+    document.getElementById(img.id).addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text', e.target.id);
+
+
+    });
+
+  } else {
+    document.getElementById(img.id).setAttribute('draggable', 'false');
+  };
+
+
+
+};
+
+
+backet.addEventListener('dragover', (e) => {
+  e.preventDefault();
+});
+
+backet.addEventListener('drop', (e) => {
+  let price;
+  e.preventDefault();
+  let parent = document.getElementById(e.dataTransfer.getData('text')).parentNode.id;
+  price = document.getElementById(parent).querySelector("p.price").textContent;
+  total = Number(price.replace("€", "")) + total;
+  document.getElementById("total").innerText = (total+'€');
+
+})
+
+
+
 
 
