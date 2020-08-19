@@ -1,3 +1,60 @@
+.sidebar {
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: #93dbe94d;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+#buttonSidebar {
+  width: inherit;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#buttonSidebar>button {
+  background-color: azure;
+}
+
+/* Sidebar links */
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+
+.sidebar a.active {
+  background-color: #053680;
+  color: white;
+}
+
+/* Links on mouse-over */
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+.inputBasket {
+  width: 1rem;
+  text-align: center;
+}
+
 .container {
   width: auto;
   height: 500px;
@@ -8,6 +65,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .description {
   color: #5ee97c;
   font-size: 20px;
@@ -17,6 +75,7 @@
   text-align: center;
   margin: inherit;
 }
+
 .price {
   color: #319b48;
   font-size: 20px;
@@ -42,9 +101,14 @@ header {
   width: 10rem;
 }
 
-article {
+.stock {
   text-align: center;
   justify-self: center;
+}
+
+.articleBasket {
+  text-align: center;
+  margin-top: 10px;
 }
 
 #uno {
@@ -52,14 +116,17 @@ article {
   grid-column: 1/2;
   width: 8rem;
 }
+
 #dos {
   grid-row: 2;
   grid-column: 2/3;
 }
+
 #tres {
   grid-row: 2;
   grid-column: 3/4;
 }
+
 #cuatro {
   grid-row: 2;
   grid-column: 4/4;
@@ -69,14 +136,17 @@ article {
   grid-row: 2;
   grid-column: 5/6;
 }
+
 #seis {
   grid-row: 2;
   grid-column: 6/6;
 }
+
 #siete {
   grid-row: 3;
   grid-column: 1/2;
 }
+
 #ocho {
   grid-row: 3;
   grid-column: 2/3;
@@ -86,14 +156,17 @@ article {
   grid-row: 3;
   grid-column: 3/4;
 }
+
 #diez {
   grid-row: 3;
   grid-column: 4/5;
 }
+
 #once {
   grid-row: 3;
   grid-column: 5/6;
 }
+
 #doce {
   grid-row: 3;
   grid-column: 6/6;
@@ -102,12 +175,9 @@ article {
 #cesta {
   grid-row: 4;
   grid-column: 6/6;
-  
 }
-
 
 #sum {
   grid-row: 4;
-  grid-column: 1/2;
-  
+  grid-column: 2/3;
 }
