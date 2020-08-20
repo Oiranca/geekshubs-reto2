@@ -3,9 +3,10 @@ let count = 0;
 let total = 0;
 let imagen = new Map();
 const basket = document.getElementById("cesta");
-let imagenes = document.getElementsByTagName("img");
-let sidebar = document.getElementById("basketSummary");
-let buttonSidebar = document.getElementById("buttonSidebar");
+const imagenes = document.getElementsByTagName("img");
+const sidebar = document.getElementById("basketSummary");
+const buttonSidebar = document.getElementById("buttonSidebar");
+let sum, minus;
 
 for (let img of imagenes) {
   if (img.id != "basketShop") {
@@ -51,7 +52,7 @@ basket.addEventListener("drop", (e) => {
     imagen.set(idElement, count);
     countItemsShops = imagen.get(idElement);
 
-    createBasket(image, idElement);
+    createBasket(image, idElement, parent);
   }
 
   price = document.getElementById(parent).querySelector("p.price").textContent;
@@ -66,8 +67,7 @@ buttonSidebar.addEventListener("click", () => {
   sidebar.style.display = "none";
 });
 
-
-const createBasket = (image, idElement) => {
+const createBasket = (image, idElement, parent) => {
   let newArticle = document.createElement("article");
   newArticle.setAttribute("class", "articleBasket");
   buttonSidebar.parentNode.insertBefore(newArticle, buttonSidebar);
@@ -83,7 +83,7 @@ const createBasket = (image, idElement) => {
 
   let newButtonPlus = document.createElement("button");
   newButtonPlus.setAttribute("type", "button");
-  newButtonPlus.setAttribute("id", "plus");
+  newButtonPlus.setAttribute("class", "plus");
   newButtonPlus.innerText = "+";
   newDiv.appendChild(newButtonPlus);
 
@@ -95,7 +95,69 @@ const createBasket = (image, idElement) => {
 
   let newButtonMinus = document.createElement("button");
   newButtonMinus.setAttribute("type", "button");
-  newButtonMinus.setAttribute("id", "minus");
+  newButtonMinus.setAttribute("class", "minus");
   newButtonMinus.innerText = "-";
   newDiv.appendChild(newButtonMinus);
+
+  sum = document
+    .getElementById("basketSummary")
+    .querySelector(`.${idElement}>.plus`);
+  minus = document
+    .getElementById("basketSummary")
+    .querySelector(`.${idElement}>.minus`);
+ 
+
+  sum.addEventListener("click", () => {
+    count = 0;
+    count++;
+    countItemsShops = imagen.get(idElement);
+    count += countItemsShops;
+    imagen.set(idElement, count);
+
+    let itemsInBasket = document.getElementsByClassName(idElement);
+
+    for (let findInputsBasket of itemsInBasket) {
+      let inputsBasket = findInputsBasket.getElementsByClassName("inputBasket");
+
+      for (let atributes of inputsBasket) {
+        atributes.value = count;
+      }
+    }
+    price = document.getElementById(parent).querySelector("p.price")
+      .textContent;
+    total = Number(price.replace("€", "")) + total;
+    document.getElementById("total").innerText = total + "€";
+  });
+
+  minus.addEventListener("click", () => {
+    count = 0;
+    let valueInputBasket = document.getElementsByClassName(idElement);
+
+    count = 0;
+    count--;
+    countItemsShops = imagen.get(idElement);
+    count += countItemsShops;
+    imagen.set(idElement, count);
+
+    let itemsInBasket = document.getElementsByClassName(idElement);
+
+    for (let findInputsBasket of itemsInBasket) {
+      let inputsBasket = findInputsBasket.getElementsByClassName("inputBasket");
+
+      for (let atributes of inputsBasket) {
+        atributes.value = count;
+      }
+    }
+    price = document.getElementById(parent).querySelector("p.price")
+      .textContent;
+    total = total - Number(price.replace("€", ""));
+    document.getElementById("total").innerText = total + "€";
+    if (count <= 0) {
+      let deleteElementBasket = document
+        .getElementById("basketSummary")
+        .querySelector(`.${idElement}`).parentNode;
+      deleteElementBasket.remove();
+      imagen.delete(idElement);
+    }
+  });
 };
