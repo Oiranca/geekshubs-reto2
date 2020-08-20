@@ -1,98 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Drag and drop</title>
+    <link rel="stylesheet" href="style/styleIndex.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Drag and drop</title>
-  <link rel="stylesheet" href="style/styleIndex.css" />
-</head>
-
-<body>
-
-  <div class="sidebar" id="basketSummary">
-    <div id='buttonSidebar'>
-
-      <button type="button">Close</button>
-
+  <body>
+    <div class="sidebar" id="basketSummary">
+      <div id="buttonSidebar">
+        <button type="button">Close</button>
+      </div>
     </div>
+    <div class="container">
+      <header>
+        <img id="logo" src="./img/logo.png" alt="logo" />
+      </header>
 
-  </div>
-  <div class="container">
-    <header>
-      <img id='logo' src="./img/logo.png" alt='logo'>
-    </header>
+      <article class="stock" id="uno">
+        <img
+          class="itemsImg"
+          id="fresas"
+          src="./img/stock/fresa.png"
+          alt="fresa"
+        />
+        <p class="description">Fresa</p>
+        <p class="price" id="unoPrice">2€</p>
+      </article>
+      <article class="stock" id="dos">
+        <img
+          class="itemsImg"
+          id="lechuga"
+          src="./img/stock/lechuga.png"
+          alt="lechuga"
+        />
+        <p class="description">Lechuga</p>
+        <p class="price" id="dosPrice">4€</p>
+      </article>
+      <article class="stock" id="tres">
+        <img
+          class="itemsImg"
+          id="manzana"
+          src="./img/stock/manzana.png"
+          alt="manzana"
+        />
+        <p class="description">Manzana</p>
+        <p class="price" id="tresPrice">6€</p>
+      </article>
+      <article class="stock" id="cuatro">
+        <img
+          class="itemsImg"
+          id="toamate"
+          src="./img/stock/tomate.png"
+          alt="tomate"
+        />
+        <p class="description">Tomate</p>
+        <p class="price" id="cuatroPrice">8€</p>
+      </article>
+      <article class="stock" id="cinco">
+        <img
+          class="itemsImg"
+          id="aguacate"
+          src="./img/stock/aguacate.png"
+          alt="aguacate"
+        />
+        <p class="description">Aguacate</p>
+        <p class="price" id="cincoPrice">10€</p>
+      </article>
+      <article class="stock" id="seis">
+        <img class="itemsImg" id="uva" src="./img/stock/uvas.png" alt="uva" />
+        <p class="description">Uvas</p>
+        <p class="price" id="seisPrice">12€</p>
+      </article>
+      <article class="stock" id="siete">
+        <img
+          class="itemsImg"
+          id="platanos"
+          src="./img/stock/platanos.png"
+          alt="platanos"
+        />
+        <p class="description">Platanos</p>
+        <p class="price" id="sietePrice">14€</p>
+      </article>
+      <article class="stock" id="ocho">
+        <img
+          class="itemsImg"
+          id="cerezas"
+          src="./img/stock/cereza.png"
+          alt="cerezas"
+        />
+        <p class="description">Cerezas</p>
+        <p class="price" id="ochoPrice">16€</p>
+      </article>
 
-    <article class="stock" id="uno">
-      <img class="itemsImg" id="fresas" src="./img/stock/fresa.png" alt="fresa" />
-      <p class="description">Fresa</p>
-      <p class="price" id="unoPrice">2€</p>
-    </article>
-    <article class="stock" id="dos">
-      <img class="itemsImg" id="lechuga" src="./img/stock/lechuga.png" alt="lechuga" />
-      <p class="description">Lechuga</p>
-      <p class="price" id="dosPrice">4€</p>
-    </article>
-    <article class="stock" id="tres">
-      <img class="itemsImg" id="manzana" src="./img/stock/manzana.png" alt="manzana" />
-      <p class="description">Manzana</p>
-      <p class="price" id="tresPrice">6€</p>
-    </article>
-    <article class="stock" id="cuatro">
-      <img class="itemsImg" id="toamate" src="./img/stock/tomate.png" alt="tomate" />
-      <p class="description">Tomate</p>
-      <p class="price" id="cuatroPrice">8€</p>
-    </article>
-    <article class="stock" id="cinco">
-      <img class="itemsImg" id="aguacate" src="./img/stock/aguacate.png" alt="aguacate" />
-      <p class="description">Aguacate</p>
-      <p class="price" id="cincoPrice">10€</p>
-    </article>
-    <article class="stock" id="seis">
-      <img class="itemsImg" id="uva" src="./img/stock/uvas.png" alt="uva" />
-      <p class="description">Uvas</p>
-      <p class="price" id="seisPrice">12€</p>
-    </article>
-    <article class="stock" id="siete">
-      <img class="itemsImg" id="platanos" src="./img/stock/platanos.png" alt="platanos" />
-      <p class="description">Platanos</p>
-      <p class="price" id="sietePrice">14€</p>
-    </article>
-    <article class="stock" id="ocho">
-      <img class="itemsImg" id="cerezas" src="./img/stock/cereza.png" alt="cerezas" />
-      <p class="description">Cerezas</p>
-      <p class="price" id="ochoPrice">16€</p>
-    </article>
-
-    <article class="stock" id="nueve">
-      <img class="itemsImg" id="detergente" src="./img/stock/detergente.png" alt="detergente" />
-      <p class="description">Detergente</p>
-      <p class="price" id="nuevePrice">18€</p>
-    </article>
-    <article class="stock" id="diez">
-      <img class="itemsImg" id="lejia" src="./img/stock/lejia.png" alt="lejia" />
-      <p class="description">Lejia</p>
-      <p class="price" id="diezPrice">20€</p>
-    </article>
-    <article class="stock" id="once">
-      <img class="itemsImg" id="limpiador" src="./img/stock/limpiador-de-ventanas.png" alt="limpiador" />
-      <p class="description">Limpia Cristales</p>
-      <p class="price" id="oncePrice">22€</p>
-    </article>
-    <article class="stock" id="doce">
-      <img class="itemsImg" id="pasta-dentifrica" src="./img/stock/pasta-dentifrica.png" alt="pasta" />
-      <p class="description">Detrífrico</p>
-      <p class="price" id="docePrice">24€</p>
-    </article>
-    <article id="cesta">
-      <img class="itemsImg" id="backetShop" src="./img/stock/cesta-de-la-compra.png" alt="Cesta de la compra" />
-    </article>
-    <article id="sum">
-      <h2>Total : <span id="total"></span> </h2>
-    </article>
-
-
-  </div>
-  <script src="./js/main.js"></script>
-</body>
-
+      <article class="stock" id="nueve">
+        <img
+          class="itemsImg"
+          id="detergente"
+          src="./img/stock/detergente.png"
+          alt="detergente"
+        />
+        <p class="description">Detergente</p>
+        <p class="price" id="nuevePrice">18€</p>
+      </article>
+      <article class="stock" id="diez">
+        <img
+          class="itemsImg"
+          id="lejia"
+          src="./img/stock/lejia.png"
+          alt="lejia"
+        />
+        <p class="description">Lejia</p>
+        <p class="price" id="diezPrice">20€</p>
+      </article>
+      <article class="stock" id="once">
+        <img
+          class="itemsImg"
+          id="limpiador"
+          src="./img/stock/limpiador-de-ventanas.png"
+          alt="limpiador"
+        />
+        <p class="description">Limpia Cristales</p>
+        <p class="price" id="oncePrice">22€</p>
+      </article>
+      <article class="stock" id="doce">
+        <img
+          class="itemsImg"
+          id="pasta-dentifrica"
+          src="./img/stock/pasta-dentifrica.png"
+          alt="pasta"
+        />
+        <p class="description">Detrífrico</p>
+        <p class="price" id="docePrice">24€</p>
+      </article>
+      <article id="cesta">
+        <img
+          class="itemsImg"
+          id="backetShop"
+          src="./img/stock/cesta-de-la-compra.png"
+          alt="Cesta de la compra"
+        />
+      </article>
+      <article id="sum">
+        <h2>Total : <span id="total"></span></h2>
+      </article>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
