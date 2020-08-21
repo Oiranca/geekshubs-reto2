@@ -1,6 +1,12 @@
-### geekshubs-reto2
+## **Índice**
 
-# Reto 2. Dynamic Showcase
+1.[Descripción reto 2](#reto)
+
+2.[Market Drag and Drop](#market)
+
+<div id="reto"/>
+
+# Reto 2. Dynamic Showcase 
 
 ○ Te presentamos este reto con el que pondrás practicar HTML5, CSS3 y JS ES6
 
@@ -42,3 +48,41 @@ Además de añadir productos, ¿podrías implementar funcionalidad para poder qu
 **Extra:**
 
 - Uso de Git-Flow
+
+<div id="market" />  
+
+# Market Drag and Drop
+
+Para poder realizar este reto, he usado display grid con una configuración de 6 colunas y 4 filas más un slidebar para poder ver el contenido de la cesta de la compra. Cuando arrastramos el producto a la cesta, lo podemos encontrar en el sidebar junto a la cantidad y a dos botones con los cuales podemos poner más cantidad o menos. Todo esto se refleja en la pantalla principal con la operación necesaria para saber el total de la cuenta generada.
+
+### Arbol de directorio
+
+```bash
+.
+├── README.md
+└── src
+    ├── img
+    │   ├── cesta.png
+    │   ├── logo.png
+    │   └── stock
+    │       ├── aguacate.png
+    │       ├── cajero.png
+    │       ├── cereza.png
+    │       ├── cesta-de-la-compra.png
+    │       ├── detergente.png
+    │       ├── fresa.png
+    │       ├── lechuga.png
+    │       ├── lejia.png
+    │       ├── limpiador-de-ventanas.png
+    │       ├── manzana.png
+    │       ├── pasta-dentifrica.png
+    │       ├── platanos.png
+    │       ├── tomate.png
+    │       └── uvas.png
+    ├── index.html
+    ├── js
+    │   └── main.js
+    └── style
+        └── styleIndex.css
+ ```
+
